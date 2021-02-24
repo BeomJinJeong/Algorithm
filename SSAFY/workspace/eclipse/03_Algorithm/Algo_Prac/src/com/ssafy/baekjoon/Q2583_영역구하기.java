@@ -30,7 +30,7 @@ public class Q2583_영역구하기 {
 		}
 		
 	}
-	public static boolean dfs(int r, int c) {
-		
-	}
+//	public static boolean dfs(int r, int c) {
+//		
+//	}
 }
