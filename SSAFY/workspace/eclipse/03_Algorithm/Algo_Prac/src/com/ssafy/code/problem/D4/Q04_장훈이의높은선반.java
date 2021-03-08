@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Q4_장훈이의높은선반 {
+public class Q04_장훈이의높은선반 {
 	static boolean[] check;
 	static int min;
 	public static void main(String[] args) throws Exception{
