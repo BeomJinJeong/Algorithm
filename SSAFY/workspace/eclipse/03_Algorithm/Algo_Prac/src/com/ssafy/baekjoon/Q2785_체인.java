@@ -27,7 +27,7 @@ public class Q2785_체인 {
 			lIdx++;
 			cnt++;
 		}
-		System.out.println(cnt);
+		System.out.println(cnt + 1);
 		
 	}
 }

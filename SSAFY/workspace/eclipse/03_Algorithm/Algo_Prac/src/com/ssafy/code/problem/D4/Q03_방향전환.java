@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 
-public class Q3_방향전환 {
+public class Q03_방향전환 {
 	public static int x1, x2, y1, y2, min = Integer.MAX_VALUE;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
