@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./main.js"></script>
+<title>Insert title here</title>
+<style>
+    .main-home {
+        height: 100px;
+        line-height: 100px;
+        font-size: 30px;
+    }
+    .my-custom-scrollbar {
+        text-align: center;
+        position: relative;
+        height: 500px;
+        overflow: auto;
+        display: block;
+    }
+    
+</style>
+</head>
+<body>
+<!-- 우측 상단 헤더 (로그인, 로그아웃)-->
+<div>
+<ul class="nav container justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link" href="#">로그인</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">로그아웃</a>
+    </li>
+    </ul>
+</div>
+<div class="font-weight-bold font-size-5 main-home sticky-top shadow bg-light" style="text-align: center;">HappyHouse</div>
+
+<!-- 상가점검, 환경내역 목록 버튼 > 누르면 테이블 교체 필요-->
+<div class="container mt-4">
+    <button class="btn btn-success mr-auto bg-primary gowrite" type="submit">환경점검내역</button>
+    <button class="btn btn-success mr-auto bg-primary gowrite" type="submit">상가목록</button>
+</div>
+
+<nav class="navbar navbar-expand-sm navbar-light mt-4">
+    <div class="container">
+        <div class="mb-4 justify-content-start"> <!-- 체크 버튼 -->
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">아파트 매매
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">아파트 전월세
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">주택 매매
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">주택 전월세
+                </label>
+            </div>
+        </div>
+
+        <div class="justify-content-end form-inline">
+            <!-- 검색 옆 드롭다운 -->
+            <div class="dropdown">
+                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                선택
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">동</a>
+                    <a class="dropdown-item" href="#">아파트명</a>
+                </div>
+            </div>
+            <!-- 검색 -->
+            <form class="form-inline justify-content-end">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </form>
+            <button class="btn btn-success bg-primary" id="searchBtn">Search</button>
+        </div>
+    </div>
+</nav>
+
+<!-- 중앙 content -->
+<div class="container mt-4 table-wrapper-scroll-y my-custom-scrollbar">           
+    <table class="table table-bordered table-striped" id="list">
+        <thead>
+        <tr>
+            <th class="no">번호</th>
+            <th class="dong">동</th>
+            <th class="name">아파트이름</th>
+            <th class="price">거래금액(원)</th>
+            <th class="what">거래종류</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>글제목01</td>
+            <td>작성자01</td>
+            <td>01</td>
+            <td>2020.03.10</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<div style="height: 100px;"></div>
+<div class="container mt-4 p-4" id="info" style="border: black 1px solid; border-radius: 20px;">
+    <div class="container row">
+        <img src="img/CS타워.jfif" class="col-sm-3"/>
+        <table class="table table-bordered col-sm-9" >
+            <tbody>
+            <tr>
+                <th class="no">주택명</th>
+                <td>아파트</td>
+                <th class="dong">거래금액</th>
+                <td>거래금액</td>
+            </tr>
+            <tr>
+                <th>건축연도</th>
+                <td>건축연도</td>
+                <th>월세금액</th>
+                <td>월세금액</td>
+            </tr>
+            <tr>
+                <th>전용면적</th>
+                <td>전용면적</td>
+                <th>거래일</th>
+                <td>거래일</td>
+            </tr>
+            <tr>
+                <th>법정동</th>
+                <td>법정동</td>
+                <th>지번</th>
+                <td>지번</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $('#search').click(function(){
+        
+    })
+    // 리스트 클릭
+    $('tr').click(function(){
+        alert($(this).children().eq(0).text());
+        // server에서 넘어온 data
+    });
+</script>
+</body>
+</html>
