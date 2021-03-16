@@ -19,7 +19,7 @@ class Shark{
 	}
 }
 public class Q16236_아기상어 {
-	static int[][] way, map, dir = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};	// 거리
+	static int[][] way, map, dir = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};	
 	static int N, sharkSize = 2, eatCnt, target_x, target_y, dist;
 	static boolean[][] check;
 	static Shark s;

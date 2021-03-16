@@ -16,29 +16,23 @@ public class Q2_수영장 {
 			tMonth = Integer.parseInt(st.nextToken());
 			year = Integer.parseInt(st.nextToken());
 			int[] arr = new int[12];
-			min = Integer.MAX_VALUE;
 			st = new StringTokenizer(br.readLine());
 			for(int i = 0; i < 12; i++) {
 				arr[i] = Integer.parseInt(st.nextToken());
 			}
-			min = Math.min(min, year);
+			min = year;	// 우선 1년 이용권을 저장
 			dfs(0, 0, arr);
 			System.out.println("#" + t + " " + min);
 		}	
 	}
 	private static void dfs(int cnt, int sum, int[] arr) {
-		if(cnt >= 12) {
+		if(cnt >= 12) {	// 1년 다 채워지면
 			min = Math.min(sum, min);
 			return;
 		} else {
-			sum += arr[cnt]*day;
-			dfs(cnt + 1, sum, arr);
-			sum -= arr[cnt]*day;
-			sum += month;
-			dfs(cnt + 1, sum, arr);
-			sum -= month;
-			sum += tMonth;
-			dfs(cnt + 3, sum, arr);
+			dfs(cnt + 1, sum + arr[cnt]*day, arr);
+			dfs(cnt + 1, sum + month, arr);
+			dfs(cnt + 3, sum + tMonth, arr);
 		}
 	}
 }
