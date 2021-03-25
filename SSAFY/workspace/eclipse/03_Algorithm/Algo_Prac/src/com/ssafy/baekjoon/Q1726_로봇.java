@@ -7,10 +7,10 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 class Robot {
-	int y;
-	int x;
-	int dir;
-	int cnt;
+	int y;	// 행
+	int x;	// 열
+	int dir;	// 방향
+	int cnt;	// 카운트
 	public Robot(int y, int x, int dir, int cnt) {
 		super();
 		this.y = y;
@@ -30,7 +30,7 @@ public class Q1726_로봇 {
 		M = Integer.parseInt(st.nextToken());
 		N = Integer.parseInt(st.nextToken());
 		map = new int[M][N];
-		check = new boolean[M][N][4];
+		check = new boolean[M][N][4];	// 행, 열, 방향 순
 		for(int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
 			for(int j = 0; j < N; j++) {
@@ -51,12 +51,12 @@ public class Q1726_로봇 {
 		System.out.println(ans);
 	}
 	private static void bfs() {
-		Queue<Robot> q = new LinkedList<>();
-		q.add(new Robot(fromY, fromX, fromDir, 0));
+		Queue<Robot2> q = new LinkedList<>();
+		q.add(new Robot2(fromY, fromX, fromDir, 0));
 		check[fromY][fromX][fromDir] = true;
 		
 		while(!q.isEmpty()) {
-			Robot cur = q.poll();
+			Robot2 cur = q.poll();
 			if(cur.dir == toDir && cur.x == toX && cur.y == toY) {
 				ans = Math.min(cur.cnt, ans);
 				continue;
@@ -69,9 +69,8 @@ public class Q1726_로봇 {
 				if(map[ny][nx] == 1) break;
 				if(check[ny][nx][cur.dir]) continue;
 				else {
-					q.add(new Robot(ny, nx, cur.dir, cur.cnt + 1));
-					if(nx == toX && ny == toY && cur.dir == toDir) {
-					} else {						
+					q.add(new Robot2(ny, nx, cur.dir, cur.cnt + 1));
+					if(nx != toX || ny != toY || cur.dir != toDir) {
 						check[ny][nx][cur.dir] = true;
 					}					
 				}
@@ -86,18 +85,14 @@ public class Q1726_로봇 {
 			case 3: left = 1; right = 0; break;
 			}
 			if(!check[cur.y][cur.x][left]) {
-				q.add(new Robot(cur.y, cur.x, left, cur.cnt + 1));
-				if(cur.y == toY && cur.x == toX && left == toDir) {
-					
-				} else {					
+				q.add(new Robot2(cur.y, cur.x, left, cur.cnt + 1));
+				if(cur.y != toY || cur.x != toX || left != toDir) {
 					check[cur.y][cur.x][left] = true;
 				}
 			}
 			if(!check[cur.y][cur.x][right]) {
-				q.add(new Robot(cur.y, cur.x, right, cur.cnt + 1));
-				if(cur.y == toY && cur.x == toX && right == toDir) {
-					
-				} else {					
+				q.add(new Robot2(cur.y, cur.x, right, cur.cnt + 1));
+				if(cur.y != toY || cur.x != toX || right != toDir) {
 					check[cur.y][cur.x][right] = true;
 				}
 			}
