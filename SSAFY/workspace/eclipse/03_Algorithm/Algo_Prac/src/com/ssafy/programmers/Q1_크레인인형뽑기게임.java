@@ -68,7 +68,6 @@ public class Q1_크레인인형뽑기게임 {
                 index[moves[i] - 1]++;
             } 
         }
-//        int answer = stack.size();
         System.out.println(ans);
 	}
 }
